@@ -1,4 +1,4 @@
-const BASE_URL = 'https://pretty-simple-blog-api.onrender.com/posts'; // Updated for Render
+const BASE_URL = 'http://localhost:3000/posts'; // Adjust this URL to your API endpoint
 
 let currentPostId = null;
 
