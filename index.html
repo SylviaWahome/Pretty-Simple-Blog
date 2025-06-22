@@ -8,49 +8,47 @@
 </head>
 <body>
   <header>
-    ✨ Simple Blog Manager ✨
+    🌸 Simple Blog Manager 🌸
   </header>
 
   <main>
     <!-- Post Titles List -->
     <div id="post-list" class="card-list">
-      <!-- Posts will be injected here -->
+      <!-- Titles dynamically inserted here -->
     </div>
 
-    <!-- Post Detail View -->
+    <!-- Post Details -->
     <div id="post-detail" class="card-detail">
-      <h2>Select a post to view details</h2>
-      <p></p>
-    </div>
-
-    <!-- New + Edit Post Forms -->
-    <section class="form-section">
-      <!-- New Post Form -->
-      <form id="new-post-form">
-        <h3>Add a New Post</h3>
-        <label for="new-title">Title:</label>
-        <input type="text" id="new-title" name="title" required />
-
-        <label for="new-content">Content:</label>
-        <textarea id="new-content" name="content" rows="5" required></textarea>
-
-        <label for="new-author">Author:</label>
-        <input type="text" id="new-author" name="author" required />
-
-        <button type="submit">Add Post</button>
-      </form>
-
-      <!-- Edit Post Form (Initially Hidden) -->
+      <h2 id="post-title">Select a post to view details</h2>
+      <p id="post-content"></p>
+      <p id="post-author"></p>
+      <div class="buttons">
+        <button id="edit-button" class="hidden">Edit</button>
+        <button id="delete-button" class="hidden">Delete</button>
+      </div>
+      <!-- Edit Form -->
       <form id="edit-post-form" class="hidden">
-        <h3>Update Post Details</h3>
+        <h4>Update Post Details</h4>
         <label for="edit-title">Title:</label>
-        <input type="text" name="title" id="edit-title" />
-
+        <input type="text" name="title" id="edit-title" required />
         <label for="edit-content">Content:</label>
-        <textarea name="content" id="edit-content" rows="5"></textarea>
-
+        <textarea name="content" id="edit-content" rows="5" required></textarea>
         <button type="submit">Update Post</button>
         <button type="button" id="cancel-edit">Cancel</button>
+      </form>
+    </div>
+
+    <!-- New Post Form -->
+    <section class="form-section">
+      <form id="new-post-form">
+        <h3>Add New Post</h3>
+        <label for="new-title">Title:</label>
+        <input type="text" id="new-title" placeholder="Title" required />
+        <label for="new-content">Content:</label>
+        <textarea id="new-content" placeholder="Content" rows="4" required></textarea>
+        <label for="new-author">Author:</label>
+        <input type="text" id="new-author" placeholder="Author" required />
+        <button type="submit">Add Post</button>
       </form>
     </section>
   </main>
