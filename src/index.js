@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000/posts';
+const BASE_URL = 'https://pretty-simple-blog-api.onrender.com/posts'; // Updated for Render
 
 let currentPostId = null;
 
@@ -19,7 +19,6 @@ function displayPosts() {
         div.addEventListener('click', () => handlePostClick(post.id));
         postList.appendChild(div);
       });
-      // Display first post on load if available
       if (posts.length > 0) {
         handlePostClick(posts[0].id);
       }
@@ -87,6 +86,7 @@ function addNewPostListener() {
         form.reset();
         displayPosts();
         handlePostClick(post.id);
+        alert('Post added successfully! ✨');
       })
       .catch(error => {
         console.error('Error creating post:', error);
@@ -139,6 +139,7 @@ function setupEditListener() {
         editButton.classList.remove('hidden');
         displayPosts();
         handlePostClick(post.id);
+        alert('Post updated successfully! 🌟');
       })
       .catch(error => {
         console.error('Error updating post:', error);
@@ -167,6 +168,7 @@ function setupDeleteListener() {
         document.getElementById('delete-button').classList.add('hidden');
         document.getElementById('edit-post-form').classList.add('hidden');
         displayPosts();
+        alert('Post deleted successfully! 🌸');
       })
       .catch(error => {
         console.error('Error deleting post:', error);
